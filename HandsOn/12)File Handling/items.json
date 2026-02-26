@@ -1,0 +1,6 @@
+[
+  {"item": "Pen", "description": "Blue ink pen", "price": 20},
+  {"item": "Notebook", "description": "EG notebook", "price": 60},
+  {"item": "Bag", "description": "School bag", "price": 120},
+  {"item": "Pencil", "description": "Apsara pencil", "price": 10}
+]
