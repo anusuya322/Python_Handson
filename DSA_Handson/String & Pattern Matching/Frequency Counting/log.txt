@@ -1,0 +1,8 @@
+INFO User login
+INFO File upload
+WARN Disk space low
+ERROR Database failed
+INFO Logout
+ERROR Timeout
+WARN Memory high
+INFO Login again
