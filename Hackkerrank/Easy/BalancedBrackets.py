@@ -9,34 +9,31 @@ import sys
 
 
 #
-# Complete the 'countResponseTimeRegressions' function below.
+# Complete the 'areBracketsProperlyMatched' function below.
 #
-# The function is expected to return an INTEGER.
-# The function accepts INTEGER_ARRAY responseTimes as parameter.
+# The function is expected to return a BOOLEAN.
+# The function accepts STRING code_snippet as parameter.
 #
 
-def countResponseTimeRegressions(responseTimes):
+
+def areBracketsProperlyMatched(code_snippet):
     # Write your code here
-    if len(responseTimes)==0:
-        return 0
-    count=0
-    total=responseTimes[0]
-    for i in range(1,len(responseTimes)):
-        avg=total/i
-        if responseTimes[i]>avg:
-            count+=1
-        total+=responseTimes[i]
-    return count
+    st=[]
+    di={']':'[',')':'(','}':'{'}
+    for ch in code_snippet:
+        if ch in '({[':
+            st.append(ch)
+        elif ch in ')}]':
+            if not st or st[-1]!=di[ch]:
+                return 0
+            st.pop()
+    if len(st)==0:
+        return 1
+    return 0
 
 if __name__ == '__main__':
-    responseTimes_count = int(input().strip())
+    code_snippet = input()
 
-    responseTimes = []
+    result = areBracketsProperlyMatched(code_snippet)
 
-    for _ in range(responseTimes_count):
-        responseTimes_item = int(input().strip())
-        responseTimes.append(responseTimes_item)
-
-    result = countResponseTimeRegressions(responseTimes)
-
-    print(result)
+    print(int(result))
